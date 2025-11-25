@@ -1,5 +1,5 @@
 <?php
-include ('index.php');
+include ('../public/cardapio.php');
 
 if(!isset($_SESSION)) {
     session_start();
