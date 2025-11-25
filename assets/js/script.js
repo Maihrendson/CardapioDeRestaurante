@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	function showMessage(msg, type = 'success') {
 		const div = document.createElement('div');
-		div.className = `alert alert-${type} position-fixed top-0 end-0 m-3`;
+		div.className = `alert alert-${type} position-fixed bottom-0 end-0 m-3`;
 		div.style.zIndex = 1080;
 		div.textContent = msg;
 		document.body.appendChild(div);

@@ -172,5 +172,12 @@
         <script src="../assets/js/script.js"></script>
         
     </main>
+
+    <footer class="navbar bg-primary mt-4" data-bs-theme="dark">
+        <div class="container">
+            <span class="navbar-brand">&copy; Copyright todos os direitos reservados FoodClub's 2024</span>
+        </div>
+    </footer>
+
     </body>
     </html>
