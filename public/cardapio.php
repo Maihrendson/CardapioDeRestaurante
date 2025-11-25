@@ -107,23 +107,31 @@
             <!--Pratos-->
             <section class="col-lg-8 mb-4">
                 <h2 class="mb-3">Pratos</h2>
-                <div class="row g-3">
-                    <?php foreach ($pratos as $prato): ?>
-                        <div class="col-md-6">
-                            <div class="card h-100 shadow-sm">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title"><?= $prato["nome"] ?></h5>
-                                    <p class="card-text flex-grow-1">
-                                        <?= $prato["descricao"] ?>
-                                    </p>
-                                    <p class="fw-bold mb-0">
-                                        Preço: R$ <?= number_format($prato["preco"], 2, ',', '.') ?>
-                                    </p>
+                        <div class="row g-3">
+                            <?php foreach ($pratos as $key => $prato): ?>
+                                <div class="col-md-6">
+                                    <div class="card h-100 shadow-sm">
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="card-title"><?= $prato["nome"] ?></h5>
+                                            <p class="card-text flex-grow-1">
+                                                <?= $prato["descricao"] ?>
+                                            </p>
+                                            <p class="fw-bold mb-2">
+                                                Preço: R$ <?= number_format($prato["preco"], 2, ',', '.') ?>
+                                            </p>
+                                            <div>
+                                                <button class="btn btn-primary add-to-cart" 
+                                                    data-key="<?= htmlspecialchars($key) ?>" 
+                                                    data-nome="<?= htmlspecialchars($prato['nome']) ?>" 
+                                                    data-preco="<?= $prato['preco'] ?>">
+                                                    Adicionar ao carrinho
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endforeach; ?>
                         </div>
-                    <?php endforeach; ?>
-                </div>
             </section>
 
             <!--Bebidas-->
@@ -136,9 +144,17 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <?php foreach ($itens as $nome => $info): ?>
-                                <li class="list-group-item d-flex justify-content-between">
-                                    <span><?= $nome ?></span>
-                                    <span>R$ <?= number_format($info["preco"], 2, ',', '.') ?></span>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div><?= $nome ?></div>
+                                        <small class="text-muted">R$ <?= number_format($info["preco"], 2, ',', '.') ?></small>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary add-to-cart" 
+                                        data-key="<?= htmlspecialchars($nome) ?>" 
+                                        data-nome="<?= htmlspecialchars($nome) ?>" 
+                                        data-preco="<?= $info['preco'] ?>">
+                                        Adicionar
+                                    </button>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
@@ -153,6 +169,7 @@
         crossorigin="anonymous">
         
         </script>
+        <script src="../assets/js/script.js"></script>
         
     </main>
     </body>
