@@ -42,7 +42,7 @@
 <div class="login-container">
     <h1>FoodClub's</h1>
     <p>Faça seu login</p>
-    <form action="dashboard.php" method="POST">
+    <form action="../admin/dashboard.php" method="POST">
         <div class="mb-3">
             <label for="username" class="form-label">Usuário</label>
             <input type="text" id="username" name="username" class="form-control" required>
