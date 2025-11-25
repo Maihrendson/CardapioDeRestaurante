@@ -7,7 +7,7 @@ $pratos = [
     ],
     "Fava" => [
         "nome" => "Fava",
-        "descricao" => "é um prato típico e robusto da culinária do Nordeste brasileiro, que utiliza a fava como seu ingrediente principal.",
+        "descricao" => "É um prato típico e robusto da culinária do Nordeste brasileiro, que utiliza a fava como seu ingrediente principal.",
         "preco" => 40.00
     ],
     "arrumadinho" => [
@@ -51,65 +51,101 @@ $pratos = [
         "preco" => 5.00
     ]
 ]; 
+
 $bebidas = [
-    "refrigerante" => [
-        "coca cola" => [
-            "preco" => 6.00
-        ],
-        "guaraná" => [
-            "preco" => 5.00
-        ],
-        "fanta" => [
-            "preco" => 5.00
-        ],
-        "sprite" => [
-            "preco" => 5.00
-        ]
+    "Refrigerantes" => [
+        "Coca-Cola" => ["preco" => 6.00],
+        "Guaraná" => ["preco" => 5.00],
+        "Fanta" => ["preco" => 5.00],
+        "Sprite" => ["preco" => 5.00],
+
     ]
 ];
+
 ?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="utf-8">
     <title>Cardápio</title>
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-<header>
-    <h1>Cardápio</h1>
-</header>
-
-<main>
-    <section>
-        <h2>Pratos</h2>
-        <ul>
-            <?php foreach ($pratos as $prato): ?>
-                <li>
-                    <strong><?= $prato["nome"] ?></strong><br>
-                    <?= $prato["descricao"] ?><br>
-                    Preço: R$ <?= number_format($prato["preco"], 2, ',', '.') ?>
+<!--Navbar-->
+<nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container mb-2">
+        <a class="navbar-brand">FoodClub's</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../admin/login.php">Login</a>
                 </li>
-                <br>
-            <?php endforeach; ?>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Bebidas</h2>
-
-        <?php foreach ($bebidas as $categoria => $itens): ?>
-            <h3><?= $categoria ?></h3>
-            <ul>
-                <?php foreach ($itens as $nome => $info): ?>
-                    <li>
-                        <?= $nome ?> — R$ <?= number_format($info["preco"], 2, ',', '.') ?>
-                    </li>
-                <?php endforeach; ?>
             </ul>
-        <?php endforeach; ?>
+        </div>
+    </div>
+</nav>
 
-    </section>
+<main class="container mb-5">
+    <div class="text-center mb-4">
+        <h1 class="cardapio-titulo mb-1">Cardápio</h1>
+        <p class="text-muted">Pratos típicos e opções deliciosas para você!</p>
+    </div>
+
+    <div class="row">
+
+        <!--Pratos-->
+        <section class="col-lg-8 mb-4">
+            <h2 class="mb-3">Pratos</h2>
+            <div class="row g-3">
+                <?php foreach ($pratos as $prato): ?>
+                    <div class="col-md-6">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><?= $prato["nome"] ?></h5>
+                                <p class="card-text flex-grow-1">
+                                    <?= $prato["descricao"] ?>
+                                </p>
+                                <p class="fw-bold mb-0">
+                                    Preço: R$ <?= number_format($prato["preco"], 2, ',', '.') ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
+        <!--Bebidas-->
+        <section class="col-lg-4 mb-4">
+            <h2 class="mb-3">Bebidas</h2>
+            <?php foreach ($bebidas as $categoria => $itens): ?>
+                <div class="card mb-3 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <strong><?= $categoria ?></strong>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <?php foreach ($itens as $nome => $info): ?>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span><?= $nome ?></span>
+                                <span>R$ <?= number_format($info["preco"], 2, ',', '.') ?></span>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+        </section>
+    </div>
 </main>
 </body>
 </html>
