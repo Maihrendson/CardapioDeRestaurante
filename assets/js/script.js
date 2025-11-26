@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			return;
 		}
 
-		// Limpar carrinho (preserva na mesma página)
+		// Limpar carrinho
 		const clearBtn = e.target.closest('.clear-cart');
 		if (clearBtn) {
 			e.preventDefault();
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			return;
 		}
 
-		// Remover item do carrinho (dashboard)
+		// Remover item do carrinho
 		const removeBtn = e.target.closest('.remove-from-cart');
 		if (removeBtn) {
 			e.preventDefault();
