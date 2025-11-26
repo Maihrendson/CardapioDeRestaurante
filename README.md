@@ -36,11 +36,3 @@ http://localhost/CardapioDeRestaurante/admin/dashboard.php
 Testes rápidos
 - Na página do cardápio, clique em "Adicionar" para inserir itens no carrinho. Uma notificação aparecerá no canto inferior-direito.
 - No dashboard, remova itens ou limpe o carrinho; as alterações são feitas via AJAX e a tabela é atualizada sem recarregar.
-
-Considerações e próximos passos
-- Se desejar persistir o carrinho em banco de dados (MySQL), eu posso adicionar `db/conexao.php` e adaptar as ações para gravar/ler do banco.
-- Se preferir imagens reais, adicione os arquivos em `assets/images/` e atualizo `public/cardapio.php` para usá-las.
-
-Licença
-- Consulte o arquivo `LICENSE` no repositório.
-
