@@ -1,6 +1,10 @@
-# CardapioDeRestaurante
+# FoodClub's
 
 Aplicação simples de cardápio e carrinho de compras implementada com PHP, Bootstrap e JavaScript puro.
+
+Integrantes
+- Maihrendson Cauã de Carvalho Cassiano (RGM: 45186341)
+- Lucas Gomes Mendes (RGM: 43576222)
 
 Resumo
 - Frontend: páginas em PHP que geram HTML estático com Bootstrap para estilo.
