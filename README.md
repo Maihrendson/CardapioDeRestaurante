@@ -19,10 +19,6 @@ Arquivos importantes
 - `assets/js/script.js` — Código JavaScript que envia requisições AJAX para `acao_carrinho.php` e atualiza a interface sem recarregar.
 - `assets/css/style.css` — Estilos customizados.
 
-Remoções
-- Foram removidos arquivos vazios/inutilizados: `public/item.php`, `admin/editar.php`, `admin/excluir.php`.
-- O arquivo de conexão `db/conexao.php` também foi removido por não apresentar referências no código atual.
-
 Como executar localmente
 1. Instale e inicie o XAMPP (ou outro ambiente Apache + PHP).
 2. Coloque a pasta do projeto em `htdocs` (já presente como `CardapioDeRestaurante`).
